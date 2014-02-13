@@ -236,12 +236,6 @@
 			</script>
 			<!-- /Hammer reload -->
 			
-			<script type="text/javascript" src="phonegap.js"></script>
-			<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-			<script type="text/javascript" src="plugins/share.js"></script>
-  			<script type="text/javascript" src="lib/cdv-plugin-fb-connect.js"></script>
-  			<script type="text/javascript" src="lib/facebook-js-sdk.js"></script>
-			
 			<!--jQuery & Google Maps -->
 			<script src="static/js/vendor/jquery.js"></script>
 			<!-- =jQuery & Google Maps -->
@@ -268,6 +262,14 @@
 			<script src="app/controllers.js"></script>
 			<!-- =Angular APP -->
 
-			<script src="http://jsconsole.com/remote.js?5F61419F-4A19-4115-8736-76149789025D"></script>			
+			<script type="text/javascript">
+			(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+			</script>
 	</body>
 </html>

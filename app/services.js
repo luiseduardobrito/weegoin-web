@@ -223,28 +223,22 @@ weegoinServices.factory("user",
 
 			_this.me = $storage.get("user");
 
-			document.addEventListener('deviceready', function() {
+			window.fbAsyncInit = function() {
 
-				try {
+				FB.init({
+					appId: '1446634675566039',
+					status: true,
+					useCachedDialogs: true
+				});
+      		};
 
-					console.log("fb_init")
-
-					FB.init({ 
-						appId: '1446634675566039',
-						status: true,
-						useCachedDialogs: true,
-						nativeInterface: CDV.FB
-					});
-
-					FB.Event.subscribe('auth.login', function(response) {
-						console.log('auth.login event');
-					});
-
-				} catch (e) {
-					console.error(e);
-				}
-
-			}, false);
+			(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
 
 			return _public;
 		}
@@ -259,10 +253,7 @@ weegoinServices.factory("user",
 
 			FB.login(function(response) {
 
-				console.log("fb_login_callback")
-				console.log(response)
-
-				if (response.session) {
+				if (response) {
 					fn(null, response);
 
 				} else {
