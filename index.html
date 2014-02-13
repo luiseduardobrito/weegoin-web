@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+
+<html lang="en" class="no-js lt-ie9 lt-ie8">
+
+<![endif]-->
+<!--[if IE 9 ]>
+
+<html lang="en" class="no-js lt-ie9>
+
+<![endif]-->
+<!--[if (gt IE 9)|!(IE)]>
+<!-->
+<html lang="en" class="no-js" ng-app="weegoinApp">
+	<!--
+<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width" />
+		<title>
+			weego.in
+		</title>
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="author" content="">
+		
+		
+		
+			<!-- Web App Data -->
+			<meta name="format-detection" content="telephone=no" />
+			<meta name="apple-mobile-web-app-capable" content="yes">
+			<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" name="viewport">
+			<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+			<!-- =Web App Data -->
+			
+			
+			<!-- Icons -->
+			<!-- non-retina iPhone pre iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon57.png" sizes="57x57">
+			<!-- non-retina iPad pre iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon72.png" sizes="72x72">
+			<!-- non-retina iPad iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon76.png" sizes="76x76">
+			<!-- retina iPhone pre iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon114.png" sizes="114x114">
+			<!-- retina iPhone iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon120.png" sizes="120x120">
+			<!-- retina iPad pre iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon144.png" sizes="144x144">
+			<!-- retina iPad iOS 7 -->
+			<link rel="apple-touch-icon-precomposed" href="static/webapp/icon152.png" sizes="152x152">
+			
+			
+			
+			<!-- iPhone SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-320x460.png" media="(device-width: 320px)" rel="apple-touch-startup-image">
+			<!-- iPhone (Retina) SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+			<!-- iPhone SPLASHSCREEN 4" -->
+			<link href="static/webapp/apple-touch-startup-image-640x1096.png" rel="apple-touch-startup-image" media="(device-height: 568px)">
+			<!-- iPad (portrait) SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image">
+			<!-- iPad (landscape) SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-1024x748.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image">
+			<!-- iPad (Retina, portrait) SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+			<!-- iPad (Retina, landscape) SPLASHSCREEN-->
+			<link href="static/webapp/apple-touch-startup-image-2048x1496.png" media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)"media="(device-width: 1536px)  and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image">
+			<!-- =Web App Data -->
+			
+			
+			
+			
+			<!-- Favicon -->
+			
+			<link href="static/img/favicon.ico" rel="shortcut icon" type="image/x-icon">
+			
+			<!-- =Favicon -->
+			
+			
+			
+			<!-- Import Styles-->
+			
+			<link rel='stylesheet' href='static/css/vendor/normalize.css'>
+			<link rel='stylesheet' href='static/css/vendor/fontello.css'>
+			<link rel='stylesheet' href='static/css/style.css'>
+			
+			<!-- =Import Styles-->
+			
+			
+			
+			<!-- Import GoogleWebFonts -->
+			
+			<link href='http://fonts.googleapis.com/css?family=Raleway:400,300,100,200,700,500' rel='stylesheet' type='text/css'>
+			<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700' rel='stylesheet' type='text/css'>
+			
+			
+			<!-- =Import GoogleWebFonts -->
+			
+			
+			
+			<!-- Modernizr & HTML5 Shiv -->
+			
+			<script src='static/js/vendor/modernizr.js'>
+			</script>
+			
+			<!--[if lt IE 9]>
+<script src='js/vendor/html5shiv.js'>
+</script>
+<![endif]-->
+			
+			<!-- =Modernizr & HTML5 Shiv -->
+			
+			
+			
+	</head>
+	<body class="touch-gesture">
+		
+		
+		
+		
+		<!-- Container -->
+			
+			<div id="container">
+							
+					<!-- Main Content-->
+					
+					<!-- Sidebar -->
+					
+					<aside id="sidemenu-container" ng-controller="MainMenuCtrl">
+						<div id="sidemenu">
+							<div id="author-profile" ng-if="user.name">
+								<div class="author-profile-photo">
+									<img src="static/assets/avatar.png" alt="">
+								</div>
+								<div class="author-profile-content">
+									<p class="title">
+										{{ user.name }}
+									</p>
+									<p class="subtitle">
+										<a href="javascript:void(0)" ng-click="goto('logout')">Sair</a>
+									</p>
+								</div>
+							</div>
+
+							<nav ng-if="!user.name">
+								<p>&nbsp;</p>
+								<ul class="nav">
+									<li class='current'>
+										<a ng-click="goto('login')" href="javascript:;">Entrar</a>
+									</li>
+								</ul>
+								<p>&nbsp;</p>
+							</nav>
+
+							<nav id="nav-container">
+								<ul class="nav">
+									<li class='current' ng-repeat="item in items">
+										<a ng:class="state({{ item.n }})" ng-click="goto('{{ item.value }}')" href="javascript:;">
+											{{ item.label }}
+										</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</aside>
+					
+					<!-- =Sidebar -->
+					
+					<section id="content-container" class="dark">
+						
+						<!-- Header -->
+						
+						<header id="header">
+							<div id="menu-trigger" class="header-button left icon-menu">
+							</div>
+							<h1>
+								<a class='current' href="index.html">
+									<span>
+										<img style="width:120px;" src="static/weego-img/logo.png" alt="Woods">
+									</span>
+								</a>
+							</h1>
+						</header>
+						
+					<!-- =Header -->
+							
+							<div id="content" class="blog" ng-view>
+							</div>
+							
+					</section>
+					
+					<!-- =Main Content -->
+					
+					
+					
+					
+			</div>
+			<!-- =Container -->
+			
+			
+			
+			<!-- Hammer reload -->
+			<script>
+				setInterval(function(){
+					try {
+						if(typeof ws != 'undefined' && ws.readyState == 1){
+							return true;
+						}
+						ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+							ws.onopen = function(){
+								ws.onclose = function(){
+									document.location.reload()}
+							}
+								ws.onmessage = function(){
+									var links = document.getElementsByTagName('link');
+									
+									for (var i = 0; i < links.length;i++) {
+										
+										var link = links[i];
+											
+											if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+												
+												href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+												
+												link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+											}
+										}
+								}
+							}
+							catch(e){
+							}
+						}
+												, 1000)
+			</script>
+			<!-- /Hammer reload -->
+			
+			<script type="text/javascript" src="phonegap.js"></script>
+			<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+			<script type="text/javascript" src="plugins/share.js"></script>
+  			<script type="text/javascript" src="lib/cdv-plugin-fb-connect.js"></script>
+  			<script type="text/javascript" src="lib/facebook-js-sdk.js"></script>
+			
+			<!--jQuery & Google Maps -->
+			<script src="static/js/vendor/jquery.js"></script>
+			<!-- =jQuery & Google Maps -->
+			
+			<!-- AngularJS -->
+			<script src="static/js/lib/angular/angular.min.js"></script>
+			<script src="static/js/lib/angular/angular-route.min.js"></script>
+			<!-- =AngularJS -->
+			
+			<!-- Custom Scripts -->
+			<script ng-src='static/js/plugins/photoswipe.js'></script>
+			<script ng-src='static/js/plugins/hammer.js'></script>
+			<script ng-src='static/js/plugins/flexslider.js'></script>
+			<script ng-src='static/js/plugins/h5validate.js'></script>
+			<script ng-src='static/js/plugins/responsivetables.js'></script>
+			<script ng-src='static/js/plugins/prism.js'></script>
+			<script ng-src='static/js/lib/script.js'></script>
+			<!-- =Custom Scripts -->
+			
+			<!-- Angular APP -->
+			<script src="app/app.js"></script>
+			<script src="app/services.js"></script>
+			<script src="app/directives.js"></script>
+			<script src="app/controllers.js"></script>
+			<!-- =Angular APP -->
+
+			<script src="http://jsconsole.com/remote.js?5F61419F-4A19-4115-8736-76149789025D"></script>			
+	</body>
+</html>
