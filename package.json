@@ -1,0 +1,23 @@
+{
+  "name": "weegoin-web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/luiseduardobrito/weegoin-web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luiseduardobrito/weegoin-web/issues"
+  },
+  "homepage": "https://github.com/luiseduardobrito/weegoin-web",
+  "dependencies": {
+    "express": "~3.4.8"
+  }
+}
