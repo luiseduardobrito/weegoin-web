@@ -6,4 +6,6 @@ server.configure(function(){
 });
 
 var port = process.env.PORT || 3000;
-server.listen(port);
+server.listen(port, function(){
+	console.log("App listening on port " + port)
+});

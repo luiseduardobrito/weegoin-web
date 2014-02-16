@@ -217,6 +217,9 @@ weegoinServices.factory("user",
 		var _this = this;
 		var _public = {};
 
+		// const
+		_this.API_HOST = "http://weegoin.herokuapp.com/index.php/"
+
 		_this.me = null;
 
 		_this.init = function() {
@@ -255,17 +258,29 @@ weegoinServices.factory("user",
 
 				if (response.authResponse) {
 
-					FB.api('/me', function(res) {
+					var accessToken = response.authResponse.accessToken;
+					var userID = response.authResponse.userID;
 
-						// TODO: remove console log
-						console.log(res);
+					$http({
+						method: "GET",
+						url: _this.API_HOST + "user/login/" + accessToken + "/" + userID
+					})
 
-						// TODO: integrate with backend
-						alert('Good to see you, ' + res.name + '.');
-					});
+					.success(function(data) {
+
+						// TODO: remove log
+						console.log(data);
+					})
+
+					.error(function(err) {
+
+						// TODO: remove log
+						console.error(err);
+						fn(err, null);
+					}) 
 
 				} else {
-					
+
 					fn(new Error("User cancelled the login"), null);
 				}
 
@@ -302,7 +317,7 @@ weegoinServices.factory("place",
 		}
 
 		return _this.init();
-	}
+	} 
 ]);
 
 weegoinServices.factory("event", 
