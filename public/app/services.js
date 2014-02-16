@@ -217,7 +217,7 @@ weegoinServices.factory("user",
 		var _this = this;
 		var _public = {};
 
-		// const
+		// consta
 		_this.API_HOST = "http://weegoin.herokuapp.com/index.php/"
 
 		_this.me = null;
