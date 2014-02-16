@@ -52,6 +52,11 @@ weegoinControllers.controller('LoginCtrl',
 			if (res.authResponse) {
 
 				FB.api('/me', function(res) {
+
+					// TODO: remove console log
+					console.log(res);
+
+					// TODO: integrate with backend
 					alert('Good to see you, ' + res.name + '.');
 				});
 
