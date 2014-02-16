@@ -1,1 +1,1 @@
-web: bundle exec unicorn -p $PO
+web: node server.js
