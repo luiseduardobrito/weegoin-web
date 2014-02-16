@@ -218,7 +218,6 @@ weegoinServices.factory("user",
 		var _public = {};
 
 		// const
-		//comentário!!
 		_this.API_HOST = "http://api.weego.in/index.php/"
 
 		_this.me = null;
