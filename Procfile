@@ -1,1 +1,1 @@
-web: python -m SimpleHTTPServer
+web: bundle exec unicorn -p $PO
