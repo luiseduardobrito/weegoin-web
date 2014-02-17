@@ -263,7 +263,7 @@ weegoinServices.factory("user",
 
 					$http({
 						method: "GET",
-						url: _this.API_HOST + "user/facebook_login/" + userID + "/" + accessToken
+						url: _this.API_HOST + "users/facebook_login/" + userID + "/" + accessToken
 					})
 
 					.success(function(data) {
