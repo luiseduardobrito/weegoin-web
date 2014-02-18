@@ -174,10 +174,10 @@
 						<!-- Header -->
 						
 						<header id="header" ng-controller="MainMenuCtrl">
-							<div id="menu-trigger" class="header-button left icon-menu">
+							<div id="menu-trigger" class="header-button left icon-menu" ng-if="menuEnabled">
 							</div>
 							<h1>
-								<a class='current' href="index.html" ng-if="menuEnabled">
+								<a class='current' href="index.html">
 									<span>
 										<img style="width:120px;" src="static/weego-img/logo.png" alt="Woods">
 									</span>
