@@ -243,15 +243,8 @@ weegoinServices.factory("user",
 						var userID = response.authResponse.userID;
 
 						return _this.performLogin(userID, accessToken, function(){});
-					} 
-
-					else if (response.status === 'not_authorized') {
-						//login function
-					} 
-
-					else {
-						//login function
 					}
+
 				}, true);
       		};
 
