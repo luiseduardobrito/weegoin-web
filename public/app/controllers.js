@@ -20,9 +20,9 @@ weegoinControllers.controller('MainMenuCtrl',
 
 			{n: 1, label: "Estabelecimentos", value: "places"},
 			{n: 2, label: "Calendário", value: "calendar"},
-			{n: 3, label: "Perfil", value: "profile"},
-			{n: 4, label: "Configurações", value: "settings"},
-			{n: 5, label: "Contato", value: "contact"}
+			// {n: 3, label: "Perfil", value: "profile"},
+			// {n: 4, label: "Configurações", value: "settings"},
+			// {n: 5, label: "Contato", value: "contact"}
 		]
 
 		$scope.state = function(s) {
