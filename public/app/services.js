@@ -233,6 +233,26 @@ weegoinServices.factory("user",
 					status: true,
 					useCachedDialogs: true
 				});
+
+				FB.getLoginStatus( function(response) {
+
+					//console.log(response);
+					if (response.status === 'connected') {
+
+						var accessToken = response.authResponse.accessToken;
+						var userID = response.authResponse.userID;
+
+						return _this.performLogin(userID, accessToken, fn);
+					} 
+
+					else if (response.status === 'not_authorized') {
+						//login function
+					} 
+
+					else {
+						//login function
+					}
+				}, true);
       		};
 
 			(function(d, s, id){
@@ -261,25 +281,7 @@ weegoinServices.factory("user",
 					var accessToken = response.authResponse.accessToken;
 					var userID = response.authResponse.userID;
 
-					$http({
-						method: "GET",
-						url: _this.API_HOST + "users/facebook_login/" + userID + "/" + accessToken
-					})
-
-					.success(function(data) {
-
-						// TODO: remove log
-						console.log(data);
-
-						_this.me = data[0];
-					})
-
-					.error(function(err) {
-
-						// TODO: remove log
-						console.error(err);
-						fn(err, null);
-					}) 
+					return _this.performLogin(userID, accessToken, fn);
 
 				} else {
 
@@ -289,6 +291,25 @@ weegoinServices.factory("user",
 			}, {
 				scope: "email" 
 			});
+		}
+
+		_this.performLogin = function(userId, accessToken, fn) {
+
+			fn = fn || function(){};
+
+			$http({
+				method: "GET",
+				url: _this.API_HOST + "users/facebook_login/" + userId + "/" + accessToken
+			})
+
+			.success(function(data) {
+				_this.me = data[0];
+				fn(null, data)
+			})
+
+			.error(function(err) {
+				fn(err, null);
+			}) 
 		}
 
 		_public.logout = function() {
