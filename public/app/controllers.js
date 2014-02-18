@@ -48,21 +48,6 @@ weegoinControllers.controller('LoginCtrl',
 	}
 ])
 
-weegoinControllers.controller('GoEventCtrl',
-
-	['$scope', '$http', '$location', 'user',
-
-	function($scope, $http, $location, $user) {
-
-		$scope.goEvent = function() {
-			
-			$user.goEvent(function(err, me) {
-				$location.path("goEvent");
-			})
-		}
-	}
-])
-
 weegoinControllers.controller('MainMenuCtrl',
 
 	['$scope', '$http', '$location', 'user',

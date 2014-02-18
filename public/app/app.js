@@ -18,11 +18,6 @@ weegoinApp.config(['$routeProvider', '$locationProvider',
 				templateUrl: 'views/login.html'
 			})
 
-			.when('/goevent', {
-				controller: 'GoEventCtrl',
-				templateUrl: 'views/event_private.html'
-			})
-
 			.when('/places', {
 				controller: 'PlacesCtrl',
 				templateUrl: 'views/list.html'
