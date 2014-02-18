@@ -11,7 +11,7 @@
 <![endif]-->
 <!--[if (gt IE 9)|!(IE)]>
 <!-->
-<html lang="en" class="no-js" ng-app="weegoinApp">
+<html lang="en" class="no-js" ng-app="weegoinApp" style="height: 100%">
 	<!--
 <![endif]-->
 	<head>
@@ -115,7 +115,7 @@
 			
 			
 	</head>
-	<body class="touch-gesture" ng-controller="ForceLoginCtrl">
+	<body class="touch-gesture" ng-controller="ForceLoginCtrl" style="height: 100%">
 		
 		
 		
@@ -140,7 +140,7 @@
 										{{ user.name }}
 									</p>
 									<p class="subtitle">
-										<a href="javascript:void(0)" ng-click="goto('logout')">Sair</a>
+										<a href="javascript:void(0)" ng-click="performLogout()">Sair</a>
 									</p>
 								</div>
 							</div>
