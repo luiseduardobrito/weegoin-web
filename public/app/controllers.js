@@ -54,12 +54,19 @@ weegoinControllers.controller('MainMenuCtrl',
 
 	function($scope, $http, $location, $user) {
 
+		$scope.menuEnabled = false;
+
 		$scope.me = function(){
 			return $user.me();
 		}
 
 		$scope.$watch('me()', function(val) {
-			$scope.user = val
+
+			if(val) {
+
+				$scope.user = val
+				$scope.menuEnabled = true;
+			}
 		})
 
 		$scope.selectedIndex = 0;
