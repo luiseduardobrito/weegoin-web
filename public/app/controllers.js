@@ -1,5 +1,53 @@
 var weegoinControllers = angular.module('weegoinApp.controllers', []);
 
+weegoinControllers.controller('ForceLoginCtrl',
+
+	['$scope', '$http', '$location', 'user',
+
+	function($scope, $http, $location, $user) {
+
+		$scope.logged_in = false;
+
+		$scope.checkUserStatus = function(){
+			return $user.me();
+		}
+
+		$scope.$watch('checkUserStatus()', function(me) {
+
+			if(me && $scope.logged_in == false) {
+
+				$scope.logged_in = true;
+				$location.path('places');
+			}
+		})
+
+		$scope.checkLocationPath = function(){
+			return $location.path();
+		}
+
+		$scope.$watch('checkLocationPath()', function(path) {
+
+			if(!$scope.logged_in)
+				$location.path("login")
+		})
+	}
+])
+
+weegoinControllers.controller('LoginCtrl',
+
+	['$scope', '$http', '$location', 'user',
+
+	function($scope, $http, $location, $user) {
+
+		$scope.performLogin = function() {
+			
+			$user.login(function(err, me) {
+				$location.path("places");
+			})
+		}
+	}
+])
+
 weegoinControllers.controller('MainMenuCtrl',
 
 	['$scope', '$http', '$location', 'user',
