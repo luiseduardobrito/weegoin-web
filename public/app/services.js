@@ -305,6 +305,25 @@ weegoinServices.factory("user",
 			}) 
 		}
 
+		_this.goEvent = function(userId) {
+
+			fn = fn || function(){};
+
+			$http({
+				method: "GET",
+				url: _this.API_HOST + "users/goEvent/" + userId + "/" + 1
+			})
+
+			.success(function(data) {
+				_this.me = data[0];
+				fn(null, data)
+			})
+
+			.error(function(err) {
+				fn(err, null);
+			}) 
+		}
+
 		_public.logout = function() {
 
 			_this.me = false;
