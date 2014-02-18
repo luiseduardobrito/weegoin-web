@@ -132,7 +132,7 @@
 						<div id="sidemenu">
 							<div id="author-profile" ng-if="user.name">
 								<div class="author-profile-photo">
-									<img src="static/assets/avatar.png" alt="">
+									<img ng-src="{{user.profilePhoto || 'static/assets/avatar.png'}}" alt="">
 								</div>
 								<div class="author-profile-content">
 									<p class="title">
