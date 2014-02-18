@@ -38,36 +38,24 @@ weegoinControllers.controller('MainMenuCtrl',
 
 			$location.path(path);
 		}
-	}
-])
 
-weegoinControllers.controller('LoginCtrl', 
-
-	['$scope', '$http', '$location', 'device', 'user',
-
-	function($scope, $http, $location, $device, $user) {
-
-		$user.login(function(err, me) {
-
-		})
-
-		$location.path("places");
-	}
-])
-
-weegoinControllers.controller('LogoutCtrl', 
-
-	['$scope', '$http', '$location', 'device', 'user',
-
-	function($scope, $http, $location, $device, $user) {
-
-		var response = $device.confirm("Tem certeza que deseja sair?")
-
-		if(response) {
-			$user.logout();
+		$scope.performLogin = function() {
+			
+			$user.login(function(err, me) {
+				$location.path("places");
+			})
 		}
 
-		$location.path("places");
+		$scope.performLogout = function() {
+
+			var response = $device.confirm("Tem certeza que deseja sair?");
+
+			if(response) {
+
+				$user.logout();
+				$location.path("places");
+			}
+		}
 	}
 ])
 

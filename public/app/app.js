@@ -15,12 +15,7 @@ weegoinApp.config(['$routeProvider', '$locationProvider',
 
 			.when('/login', {
 				controller: 'LoginCtrl',
-				templateUrl: 'views/list.html'
-			})
-
-			.when('/logout', {
-				controller: 'LogoutCtrl',
-				templateUrl: 'views/list.html'
+				templateUrl: 'views/login.html'
 			})
 
 			.when('/places', {
