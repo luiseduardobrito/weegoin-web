@@ -270,6 +270,8 @@ weegoinServices.factory("user",
 
 						// TODO: remove log
 						console.log(data);
+
+						_this.me = data[0];
 					})
 
 					.error(function(err) {
