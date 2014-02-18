@@ -467,6 +467,12 @@ body {
   z-index: 2;
   position: relative; }
 
+.wrapped-content-login {
+  padding-top: 100px;
+  left: 50%;  
+  z-index: 2;
+  position: relative; }
+
 .hero {
   height: 300px;
   width: 100%; }
