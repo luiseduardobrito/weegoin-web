@@ -56,7 +56,7 @@ weegoinControllers.controller('GoEventCtrl',
 
 		$scope.goEvent = function() {
 			
-			$user.login(function(err, me) {
+			$user.goEvent(function(err, me) {
 				$location.path("goEvent");
 			})
 		}
