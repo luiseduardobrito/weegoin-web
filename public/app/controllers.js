@@ -161,9 +161,9 @@ weegoinControllers.controller('PublicEventCtrl',
 
 weegoinControllers.controller('PrivateEventCtrl', 
 
-	['$scope', '$http', '$location', 'device',
+	['$scope', 'user', '$location', 'device',
 
-	function($scope, $http, $location, $device) {
+	function($scope, $user, $location, $device) {
 		
 		$scope.share = function() {
 

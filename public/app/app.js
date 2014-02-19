@@ -25,7 +25,7 @@ weegoinApp.config(['$routeProvider', '$locationProvider',
 
 			.when('/place/:id', {
 				templateUrl: 'views/place.html',
-				controller: 'PlaceCtrl'	
+				controller: 'PlaceEventCtrl'	
 			})
 
 			.when('/place/:id/events', {
