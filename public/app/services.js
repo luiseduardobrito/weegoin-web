@@ -311,6 +311,31 @@ weegoinServices.factory("user",
 			$storage.set("user", null);
 		}
 
+		_public.confirmPresence = function(event_id, fn) {
+
+			fn = fn || function(err) {
+				if(err) console.error(err);
+			}
+
+			// check id facebook
+			if(!_this.me.idFacebook) {
+				return fn(new Error("No facebook id in user session"));
+			}
+
+			$http({
+				method: "GET",
+				url: _this.API_HOST + "users/go_party/" + _this.me.idFacebook + "/" + event_id
+			})
+
+			.success(function(data) {
+				fn(null, data)
+			})
+
+			.error(function(err) {
+				fn(err, null);
+			})
+		}
+
 		return _this.init();
 	}
 ]);
