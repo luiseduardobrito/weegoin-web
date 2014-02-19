@@ -177,7 +177,7 @@ weegoinControllers.controller('PrivateEventCtrl',
 
 		$scope.confirm = function(event_id) {
 
-			$user.confirmPresence(event_id, function(err, data)) {
+			$user.confirmPresence(event_id, function(err, data) {
 
 				if(err) {
 
@@ -193,7 +193,7 @@ weegoinControllers.controller('PrivateEventCtrl',
 
 					alert("Sua presença foi confirmada com sucesso. Boa festa!");
 				}
-			}
+			})
 		}
 	}
 ])
