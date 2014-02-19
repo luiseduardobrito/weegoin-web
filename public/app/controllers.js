@@ -174,6 +174,27 @@ weegoinControllers.controller('PrivateEventCtrl',
 				link: 'http://weego.in'
 			})
 		}
+
+		$scope.confirm = function(event_id) {
+
+			$user.confirmPresence(event_id, function(err, data)) {
+
+				if(err) {
+
+					console.log(err);
+
+					alert("Não foi possível confirmar sua presença nesse evento. "
+						+ "Por favor, tente novamente. "
+						+ "Se o problema persistir verifique se o prazo de abertuda da lista expirou"
+					);
+				}
+
+				else {
+
+					alert("Sua presença foi confirmada com sucesso. Boa festa!");
+				}
+			}
+		}
 	}
 ])
 
