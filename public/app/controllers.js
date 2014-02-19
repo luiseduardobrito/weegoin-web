@@ -28,7 +28,7 @@ weegoinControllers.controller('ForceLoginCtrl',
 		$scope.$watch('checkLocationPath()', function(path) {
 
 			if(!$scope.logged_in)
-				$location.path("login")
+				$location.path("login");
 		})
 	}
 ])
